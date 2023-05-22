@@ -5,3 +5,8 @@ node_modules/
 .idea/
 .vscode/
 
+# docker
+node_db/
+
+# OS generated files
+.DS_Store

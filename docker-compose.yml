@@ -29,6 +29,25 @@ services:
       - node
     ports:
       - "3000:3000"
+    depends_on:
+      - database
+
+  database:
+    image: mysql:8.0
+    platform: linux/amd64
+    container_name: database
+    environment:
+      MYSQL_DATABASE: node
+      MYSQL_USER: node
+      MYSQL_PASSWORD: node
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./node_db:/var/lib/mysql
+    networks:
+      - node
+
 
 networks:
-    node:
+  node:

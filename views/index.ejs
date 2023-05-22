@@ -1,0 +1,32 @@
+<%- include('./partials/header.ejs'); %>
+
+<section class="container">
+    <div class="col-md-12">
+        <h1>Lista de Perguntas</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pergunta</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% questions.forEach( (question) => { %>
+                <tr>
+                    <td><%= question.id %></td>
+                    <td><%= question.question %></td>
+                    <td><%= question.description %></td>
+                    <td>
+                        <a href="/questions/edit/<%= question.id %>" class="btn btn-primary">Editar</a>
+                        <a href="/questions/delete/<%= question.id %>" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<%- include('./partials/footer.ejs'); %>

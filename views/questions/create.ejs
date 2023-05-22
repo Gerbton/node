@@ -1,0 +1,35 @@
+<%- include('../partials/header.ejs'); %>
+
+<section class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">Cadastro de Perguntas</h3>
+        </div>
+        <div class="card-body">
+            <form action="/questions/save" method="post" class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="question">Pergunta</label>
+                        <input type="text" name="question" class="form-control" id="question"
+                               placeholder="Digite a pergunta">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="description">Descrição</label>
+                        <textarea name="description" class="form-control" id="description" cols="30"
+                                  rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer.ejs'); %>
